@@ -1,0 +1,55 @@
+<html>
+
+<style>
+ul {
+  list-style-type: none;
+  }
+</style>
+
+<head></head>
+
+<body>
+
+
+<script type="text/javascript" src="cryptojs.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<div class="widget">
+  <h3>Generate hash of password:</h3>
+  <div class="inner">
+      <ul id="login">
+       <form action="default.php" method="post">
+        <li>
+	  Username<br/>
+          <input type="text" name="username" id="username"/>
+        </li>
+        <li>
+	  Password<br/>
+  	  <input type="text" name="password" id="password"/>
+ 	</li>
+        <li>
+ 	  <input type="button" value="generate" id="submit"/>
+        </li>
+<br/>	
+       <li><div id="hashedpassword">the hash of the password will go here</div>
+       </li>
+       </form>
+      </ul>
+  </div>
+</div>
+
+<script src="pbkdf2.js"></script>
+
+<script type="text/javascript">
+
+$("#submit").click(function() {
+  password=$("#password");
+  originalpass=password.val();
+  permasalt=$("#username").val();
+  firsthash=CryptoJS.PBKDF2(originalpass, permasalt, {keySize: 128/32, iterations: 2000});
+  $("#hashedpassword").html(firsthash.toString(CryptoJS.enc.Hex));
+  });
+
+</script>
+</body>
+</html>
