@@ -12,7 +12,7 @@ http://kianoo.com/passencrypt/default.php
 
 The login credentials are:
 
-username: Administrator
+username: administrator
 
 password: kianootestpass
 
