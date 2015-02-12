@@ -30,7 +30,7 @@ function setvariables() {
  
   contactvars.FullName=$("#FullName").val();
 
-  contactvars.income=$("#income").val();
+  contactvars.income=$("#income").html();
  
   contactvars.EducationYears=$("#EducationYears").val();
 
@@ -69,6 +69,8 @@ function setcontact(plaintext) {
   contactobj = JSON.parse(plaintext);
 
 //  $("#FullName").html(contactobj.FullName);
+ 
+  $("#income").html(contactobj.income);
 
   console.log("FullName: "+contactobj.FullName);
 
@@ -238,10 +240,6 @@ $("body").on("change", "select", function() {
   newscore();
   })
   .on("change","#EducationYears",function(){
-  encryptsalt=$("#encryptsalt").html();
-  newscore();
-  })
-  .on("change","#income",function(){
   encryptsalt=$("#encryptsalt").html();
   newscore();
   })

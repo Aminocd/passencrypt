@@ -23,7 +23,7 @@ if (!(isset($show))) {
   }
 else {
 
-//create one way salt for client-side decryptior
+//create one way salt for client-side decryption
 
 $decryptsalt=createsalt(0,1);
 
@@ -239,8 +239,9 @@ userid: <input type="text" id="userid" value="$lastuserid"/><br/>
 
 <br/>
 
-Full Name: <input type="text" id="FullName" /><br/>
-<br/>
+Full Name: <input type="text" id="FullName" />
+<br/><br/>Income: <span id="income"></span>
+<br/><br/>
 Marriage: <label for="radio_single"><input type="radio" name="singlespouse" id="radio_single" checked="checked"/>single</label>
 <label for="radio_married"><input type="radio" name="singlespouse" id="radio_married"/>married</label>
 <br/><br/>
@@ -401,7 +402,6 @@ day of birth:&nbsp;<select id="Birthday" data-placeholder="Select the day of bir
 
 <br/><br/>Years of education<br/><input id="EducationYears" type="text" style="width:350"/>
 
-<br/><br/>Income<br/><input id="income" type="text" style="width:350"/>
 
 <br/><br/>
 
