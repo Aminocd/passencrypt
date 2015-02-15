@@ -38,9 +38,7 @@ Installation
 
 To recreate this web demo on your own server, follow these steps:
 
-
-
-
+Open createtables.php
 
 Password-based key generation
 
@@ -52,6 +50,6 @@ The file is in this repository as well (hashpass-util.html).
 
 The utility stretches the password using 2000 rounds of PBKDF2. This also occurs on the log in page when the user enters their password, which is why you'll notice a delay of a couple of seconds to login.
 
-When creating a new user account, derive a key using the above utility, and create a new record in the user's username and password-based key 
+When creating a new user account, derive a key using the above utility, and create a new record in the `user` table with the user's username and password-based key.
 
 
