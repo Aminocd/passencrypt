@@ -16,7 +16,9 @@ username: administrator
 
 password: kianootestpass
 
-The application is a credit score estimator and extremely basic CRM. Please note, the purpose of the credit score estimator component of this application is to generate dummy data for demonstrating the encryption functionality of the app, and not to generate accurate credit scores, so please don't rely on the credit score outputs.
+The application is a credit score estimator and extremely basic CRM. To load a contact, type their userid in the userid field and click outside the field.
+
+Please note, the purpose of the credit score estimator component of this application is to generate dummy data for demonstrating the encryption functionality of the app, and not to generate accurate credit scores, so please don't rely on the credit score outputs.
 
 I've used Google forms for creating new contacts and inputting their data. The form for the demo can be found here:
 
