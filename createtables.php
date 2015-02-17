@@ -2,40 +2,15 @@
 
 include 'server.php';
 
+include 'functions-install.php';
+
 $mysqli = new mysqli($server,$user,$pass,$db);
 
-// check if tables exist 
+// executable body of program
 
-function createquery($tablename) {
+function run_create_table() {
 
-  $query = "SHOW TABLES LIKE '$tablename'";
-  
-  return $query;
-  }
-
-function reportresults($num_rows, $tablename) {
-  if ($num_rows == 1) {
-    $log = "table `$tablename` already exists<br/>";
-    }
-  else {
-    $log = "table `$tablename` created<br/>";
-    }
-  return $log;
-  }
-
-function runquery ($tablename) {
-
-  global $mysqli; 
-
-  $query = createquery($tablename);
-
-  $result = $mysqli->query($query);
-
-  $num_rows = $result->num_rows;
-
-  return $num_rows;
-  }
-
+global $mysqli;
 // `users`
 
 $tablename = "users";
@@ -120,6 +95,7 @@ if (!$result) {
 $log .= reportresults($num_rows,$tablename);
 
 echo $log;
+  }
 
 ?>
 
