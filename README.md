@@ -46,23 +46,23 @@ Follow these steps to install the demo app:
 
 3. Open 'server.php' with an editor and enter the host name, username, password and database name into the $server, $user, $db, and $pass variables, respectively.
 
-4. a) If you have local access or secure (encrypted) remote access to a dedicated machine where your demo app is hosted, and are able to access the web server locally from the machine using a browser, follow these steps to install the demo app:
+4. 	a) If you have local access or secure (encrypted) remote access to a dedicated machine where your demo app is hosted, and are able to access the web server locally from the machine using a browser, follow these steps to install the demo app:
 
-i. From the machine where the web server is running, run install.php from a browser. It will prompt you to enter the user's username and password. Once you click 'submit', the script will create the MySQL tables used by the demo app, and will create a new user with the username/password you entered that can access app.
+		i. From the machine where the web server is running, run install.php from a browser. It will prompt you to enter the user's username and password. Once you click 'submit', the script will create the MySQL tables used by the demo app, and will create a new user with the username/password you entered that can access app.
 
-b) If you do not have local or secure remote access to a browser running on the machine where the web server is running, follow these steps to install the demo app:
+	b) If you do not have local or secure remote access to a browser running on the machine where the web server is running, follow these steps to install the demo app:
 
-i. Run install-tables.php from a browser on any machine. This will create the MySQL tables. 
+		i. Run install-tables.php from a browser on any machine. This will create the MySQL tables. 
 
-ii. On your local machine, open with a browser:
+		ii. On your local machine, open with a browser:
 
-hashpass-util.html
+		hashpass-util.html
 
-This is a password stretching utility that uses 2000 rounds of PBKDF2 to generate a password-derived key and outputs it on the webpage. Input the user's username and password in the labeled fields and press submit to generate a stretched password for your new user. 
+		This is a password stretching utility that uses 2000 rounds of PBKDF2 to generate a password-derived key and outputs it on the webpage. Input the user's username and password in the labeled fields and press submit to generate a stretched password for your new user. 
 
-iii. Securely connect (e.g. using HTTPS) to your web server's database and execute this SQL statement with the username you inputted above in place of [username] and the password-derived key outputted above in place of [password]:
+		iii. Securely connect (e.g. using HTTPS) to your web server's database and execute this SQL statement with the username you inputted above in place of [username] and the password-derived key outputted above in place of [password]:
 
-`INSERT INTO users (username, password, active) VALUES('[username]', '[password]', 1)`
+		`INSERT INTO users (username, password, active) VALUES('[username]', '[password]', 1)`
 
 5. Create a Google From modeled on the one found here: 
 
