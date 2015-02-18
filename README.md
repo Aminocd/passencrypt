@@ -74,15 +74,15 @@ Follow these steps to install the demo app:
 
 7. From the same script generator window, click Resources->'All your triggers' to open up the trigger setting window. 
 
-	Create the following triggers:
+Create the following triggers:
 
-	Run			Events
-	----------------------|-----------------------|
-	trunctLog_PE	      |	Time-driven	      |	Hour timer     | Every 2 hours
-	sendHttpPostAll_PE    |	Time-driven	      |	Hour timer     | Every 2 hours
-	truncateTable	      |	Time-driven	      |	Hour timer     | Every 2 hours
-	sendHttpPost_PE	      |	From spreadsheet      |	On form submit |
-	increment_PE	      |	From spreadsheet      |	On form submit |	
+Run			Events
+----------------------|-----------------------|
+trunctLog_PE	      |	Time-driven	      |	Hour timer     | Every 2 hours
+sendHttpPostAll_PE    |	Time-driven	      |	Hour timer     | Every 2 hours
+truncateTable	      |	Time-driven	      |	Hour timer     | Every 2 hours
+sendHttpPost_PE	      |	From spreadsheet      |	On form submit |
+increment_PE	      |	From spreadsheet      |	On form submit |	
 
 
 
