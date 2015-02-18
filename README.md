@@ -76,7 +76,7 @@ Follow these steps to install the demo app:
 
 Create the following triggers:
 
-Run                   |	Events                |
+Run                   |	Events                |                |              |
 ----------------------|-----------------------|----------------|--------------| 
 trunctLog_PE	      |	Time-driven	      |	Hour timer     | Every 2 hours|
 sendHttpPostAll_PE    |	Time-driven	      |	Hour timer     | Every 2 hours|
