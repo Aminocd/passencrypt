@@ -52,7 +52,7 @@ Follow these steps to install the demo app:
 
 	b) If you do not have local or secure remote access to a browser running on the machine where the web server is running, follow these steps to install the demo app:
 
-		i. Run install-tables.php from a browser on any machine. This will create the MySQL tables. 
+		i. Run [your-domain]/install-tables.php from a browser on any machine. This will create the MySQL tables. 
 
 		ii. On your local machine, open with a browser:
 
