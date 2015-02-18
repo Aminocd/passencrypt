@@ -77,12 +77,12 @@ Follow these steps to install the demo app:
 Create the following triggers:
 
 Run                   |	Events                |
-----------------------|-----------------------|
-trunctLog_PE	      |	Time-driven	      |	Hour timer     | Every 2 hours
-sendHttpPostAll_PE    |	Time-driven	      |	Hour timer     | Every 2 hours
-truncateTable	      |	Time-driven	      |	Hour timer     | Every 2 hours
-sendHttpPost_PE	      |	From spreadsheet      |	On form submit |
-increment_PE	      |	From spreadsheet      |	On form submit |	
+----------------------|-----------------------|----------------|--------------| 
+trunctLog_PE	      |	Time-driven	      |	Hour timer     | Every 2 hours|
+sendHttpPostAll_PE    |	Time-driven	      |	Hour timer     | Every 2 hours|
+truncateTable	      |	Time-driven	      |	Hour timer     | Every 2 hours|
+sendHttpPost_PE	      |	From spreadsheet      |	On form submit |              |
+increment_PE	      |	From spreadsheet      |	On form submit |              |	
 
 
 
