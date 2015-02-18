@@ -64,7 +64,7 @@ Follow these steps to install the demo app:
 
 		`INSERT INTO users (username, password, active) VALUES('[username]', '[password]', 1)`
 
-5. Create a Google From modeled on the one found here: 
+5. Create a Google Form modeled on the one found here: 
 
 	https://docs.google.com/forms/d/1ImfZgzjiamALIIH1Bx6qiRnEbKrHoNTIVqp0s8lpgUk/viewform
 
