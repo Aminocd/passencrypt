@@ -66,27 +66,27 @@ Follow these steps to install the demo app:
 
 5. Create a Google From modeled on the one found here: 
 
-https://docs.google.com/forms/d/1ImfZgzjiamALIIH1Bx6qiRnEbKrHoNTIVqp0s8lpgUk/viewform
+	https://docs.google.com/forms/d/1ImfZgzjiamALIIH1Bx6qiRnEbKrHoNTIVqp0s8lpgUk/viewform
 
-When finished creating the form, click on the 'View Responses' tab. In the responses spreadsheet that opens, click Tools->Script editor at the top to open the script generator window. 
+	When finished creating the form, click on the 'View Responses' tab. In the responses spreadsheet that opens, click Tools->Script editor at the top to open the script generator window. 
 
 6. Create five script files: trunctLog_PE, sendHttpPostAll_PE, truncateTable, sendHttpPost_PE, increment_PE, and in each copy the content found in the script file of the same name found in the Google Scripts directory in this repository. Change the references to kianoo.com in the source script files to your own domain name.
 
 7. From the same script generator window, click Resources->'All your triggers' to open up the trigger setting window. 
 
-Create the following triggers:
+	Create the following triggers:
 
-Run			Events
+	Run			Events
 
-trunctLog_PE		Time-driven		Hour timer	Every 2 hours
+	trunctLog_PE		Time-driven		Hour timer	Every 2 hours
 
-sendHttpPostAll_PE	Time-driven		Hour timer	Every 2 hours
+	sendHttpPostAll_PE	Time-driven		Hour timer	Every 2 hours
 
-truncateTable		Time-driven		Hour timer	Every 2 hours
+	truncateTable		Time-driven		Hour timer	Every 2 hours
 
-sendHttpPost_PE		From spreadsheet	On form submit
+	sendHttpPost_PE		From spreadsheet	On form submit
 
-increment_PE		From spreadsheet	On form submit	
+	increment_PE		From spreadsheet	On form submit	
 
 
 
