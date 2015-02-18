@@ -1,12 +1,14 @@
-Passencrypt is encryption and decryption software for web applications. It is intended to allow browsers and web servers to transmit data privately between each other through HTTP, over insecure internet connections.
+# Passencrypt
 
-It allows sensitive data to be encrypted before transmission by the originator (which can be either the client or the server), with one-time symmetric keys that can only be recreated at the destination with knowledge of a password. Passencrypt does not provide a method for securely transmitting the password, so other channels have to be used to establish a common user password for new user account setup.
+This a repository for a demonstration web application to showcase Passencrypt, which is a set of open source encryption and decryption software tools for web applications. It is intended to allow browsers and web servers to transmit data privately between each other through HTTP, over insecure network connections.
 
-The purpose of passencrypt is to provide web applications hosted on shared web hosting services that don't offer HTTPS with 'better than nothing' protection against MITM eavesdropping on data transmission between web servers and their web users.
+Passencrypt allows sensitive data to be encrypted before transmission by the originator (which can be either the client or the server), with one-time symmetric keys that can only be recreated at the destination with knowledge of a password. Passencrypt does not provide a method for securely transmitting the password, so other channels have to be used to establish a common user password for new user account setup.
 
-Demo web application
+The purpose of Passencrypt is to provide web applications hosted on shared web hosting services that don't offer HTTPS with 'better than nothing' protection against MITM eavesdropping on data transmission between web servers and their web users.
 
-I've created a demonstration web application that uses passencrypt here:
+# Live version 
+
+A live verrsion of the demo application can be found here:
 
 http://kianoo.com/passencrypt/default.php
 
@@ -24,8 +26,7 @@ I've used Google forms for creating new contacts and inputting their data. The f
 
 https://docs.google.com/forms/d/1ImfZgzjiamALIIH1Bx6qiRnEbKrHoNTIVqp0s8lpgUk/viewform
 
-
-Features
+# Features
 
 * 2,000 rounds of PBKDF2 to stretch the user password
 
@@ -33,23 +34,59 @@ Features
 
 * Advanced Encryption Standard (AES) used for encryption and decryption
 
+# Installation
 
-Installation
+Passencrypt is designed for applications that run on LAMP (Linux, Apache, MySQL, PHP) stacks. The demo app likewise requires that you have the LAMP stack installed.
 
-To recreate this web demo on your own server, follow these steps:
+Follow these steps to install the demo app:
 
-Open createtables.php
+1. Clone the repository: `git clone https://github.com/Amincd/passencrypt.git`
 
-Password-based key generation
+2. Create a MySQL database for your app, and make note of the host name, username, database name and password of the new database.
 
-I've created a password stretching utility at:
+3. Open 'server.php' with an editor and enter the host name, username, password and database name into the $server, $user, $db, and $pass variables, respectively.
 
-http://kianoo.com/passencrypt/hashpass-util.html
+4. a) If you have local access or secure (encrypted) remote access to a dedicated machine where your demo app is hosted, and are able to access the web server locally from the machine using a browser, follow these steps to install the demo app:
 
-The file is in this repository as well (hashpass-util.html).
+i. From the machine where the web server is running, run install.php from a browser. It will prompt you to enter the user's username and password. Once you click 'submit', the script will create the MySQL tables used by the demo app, and will create a new user with the username/password you entered that can access app.
 
-The utility stretches the password using 2000 rounds of PBKDF2. This also occurs on the log in page when the user enters their password, which is why you'll notice a delay of a couple of seconds to login.
+b) If you do not have local or secure remote access to a browser running on the machine where the web server is running, follow these steps to install the demo app:
 
-When creating a new user account, derive a key using the above utility, and create a new record in the `user` table with the user's username and password-based key.
+i. Run install-tables.php from a browser on any machine. This will create the MySQL tables. 
+
+ii. On your local machine, open with a browser:
+
+hashpass-util.html
+
+This is a password stretching utility that uses 2000 rounds of PBKDF2 to generate a password-derived key and outputs it on the webpage. Input the user's username and password in the labeled fields and press submit to generate a stretched password for your new user. 
+
+iii. Securely connect (e.g. using HTTPS) to your web server's database and execute this SQL statement with the username you inputted above in place of [username] and the password-derived key outputted above in place of [password]:
+
+`INSERT INTO users (username, password, active) VALUES('[username]', '[password]', 1)`
+
+5. Create a Google From modeled on the one found here: 
+
+https://docs.google.com/forms/d/1ImfZgzjiamALIIH1Bx6qiRnEbKrHoNTIVqp0s8lpgUk/viewform
+
+When finished creating the form, click on the 'View Responses' tab. In the responses spreadsheet that opens, click Tools->Script editor at the top to open the script generator window. 
+
+6. Create five script files: trunctLog_PE, sendHttpPostAll_PE, truncateTable, sendHttpPost_PE, increment_PE, and in each copy the content found in the script file of the same name found in the Google Scripts directory in this repository. Change the references to kianoo.com in the source script files to your own domain name.
+
+7. From the same script generator window, click Resources->'All your triggers' to open up the trigger setting window. 
+
+Create the following triggers:
+
+Run			Events
+
+trunctLog_PE		Time-driven		Hour timer	Every 2 hours
+
+sendHttpPostAll_PE	Time-driven		Hour timer	Every 2 hours
+
+truncateTable		Time-driven		Hour timer	Every 2 hours
+
+sendHttpPost_PE		From spreadsheet	On form submit
+
+increment_PE		From spreadsheet	On form submit	
+
 
 
