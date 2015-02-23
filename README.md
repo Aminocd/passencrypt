@@ -88,11 +88,13 @@ increment_PE	      |	From spreadsheet      |	On form submit |              |
 
 If you would like to contribute, please email me at aminkbtc [nospam_at] gmail dt com, or simply make a pull request. Work needed to be done:
 
-* **modularize the Passencrypt features of the demo application into a library that can easily ported into other projects**
+* **modularize the Passencrypt features of the demo application into a library that can easily be ported into other projects**
 
 * cryptoanalyze Passencrypt to verify whether it enables secure communication as intended
 
 * add log in attempt limiting to prevent brute force attacks
+
+* enable Passencrypt to use multiple one-time token tables for encryption of asynchronous data channels
 
 
 
