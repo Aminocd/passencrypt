@@ -1,12 +1,14 @@
 # Passencrypt
 
-This a repository for a demonstration web application to showcase Passencrypt, which is a set of open source encryption and decryption software tools for web applications. It is intended to allow browsers and web servers to transmit data privately between each other through HTTP, over insecure network connections.
+## Introduction
 
-Passencrypt allows sensitive data to be encrypted before transmission by the originator (which can be either the client or the server), with one-time symmetric keys that can only be recreated at the destination with knowledge of a password. Passencrypt does not provide a method for securely transmitting the password, so other channels have to be used to establish a common user password for new user account setup.
+This a repository for a demonstration web application to showcase Passencrypt, which is a set of open source encryption and decryption software tools for web applications. Passencrypt is intended to enable browsers and web servers to transmit data privately between each other through HTTP, over insecure network connections.
 
-The purpose of Passencrypt is to provide web applications hosted on shared web hosting services that don't offer HTTPS with 'better than nothing' protection against MITM eavesdropping on data transmission between web servers and their web users.
+Passencyrpt does not rely on certificate authorities or a public key infrastructure to provide security. Instead, it enables sensitive data to be encrypted before transmission by the originator (which can be either the client or the server), with one-time symmetric keys that can only be recreated at the destination with knowledge of a password. Passencrypt does not provide a method for securely transmitting the password, so other channels have to be used to establish a common user password for new user account setup.
 
-# Live version 
+The purpose of Passencrypt is to provide web applications hosted on shared web hosting services that don't offer HTTPS with 'better than nothing' protection against MITM eavesdropping on data transmission between web servers and authenticated web users. 
+
+## Live version 
 
 A live verrsion of the demo application can be found here:
 
@@ -26,7 +28,7 @@ I've used Google forms for creating new contacts and inputting their data. The f
 
 https://docs.google.com/forms/d/1ImfZgzjiamALIIH1Bx6qiRnEbKrHoNTIVqp0s8lpgUk/viewform
 
-# Features
+## Features
 
 * 2,000 rounds of PBKDF2 to stretch the user password
 
@@ -34,7 +36,7 @@ https://docs.google.com/forms/d/1ImfZgzjiamALIIH1Bx6qiRnEbKrHoNTIVqp0s8lpgUk/vie
 
 * Advanced Encryption Standard (AES) used for encryption and decryption
 
-# Installation
+## Installation
 
 Passencrypt is designed for applications that run on LAMP (Linux, Apache, MySQL, PHP) stacks. The demo app likewise requires that you have the LAMP stack installed.
 
@@ -84,7 +86,7 @@ truncateTable	      |	Time-driven	      |	Hour timer     | Every 2 hours|
 sendHttpPost_PE	      |	From spreadsheet      |	On form submit |              |
 increment_PE	      |	From spreadsheet      |	On form submit |              |	
 
-# Contribute
+## Contribute
 
 If you would like to contribute, please email me at aminkbtc [nospam_at] gmail dt com, or simply make a pull request. Work needed to be done:
 
