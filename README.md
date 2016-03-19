@@ -20,7 +20,7 @@ username: administrator
 
 password: kianootestpass
 
-The application is a credit score estimator and extremely basic CRM. To load a contact, type their userid in the userid field and click outside the field.
+The application is a credit score estimator and extremely basic CRM. To load a contact, type their userid in the userid field and click outside the field or click on the row of the client table associated with the contact.
 
 Please note, the purpose of the credit score estimator component of this application is to generate dummy data for demonstrating the encryption functionality of the app, and not to generate accurate credit scores, so please don't rely on the credit score outputs.
 
