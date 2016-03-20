@@ -277,4 +277,16 @@ $("body").on("click", ".client_row", function() {
   load_from_id(row_userid);
   });
 
+$("body").on("hover", ".client_row", function() {
+  $(this).toggleClass("hover_client_row");
+  });
+
+$("body").on("click", ".client_row", function() {
+  var time = 500;
+  var this_row = $(this);
+  this_row.toggleClass("click_client_row");
+  setTimeout(function() {
+    this_row.toggleClass("click_client_row");
+    }, time);
+  });
 });

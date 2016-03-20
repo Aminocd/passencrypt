@@ -176,6 +176,14 @@ table td {
     display:none;
     }
 
+  .hover_client_row {
+    background:yellow;
+    }
+
+  .click_client_row {
+    background:red;
+    }
+
   </style>
   <link rel="stylesheet" href="chosen/chosen.css" />
 </head>
