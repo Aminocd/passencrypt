@@ -6,14 +6,24 @@ extract($_GET);
 
 $fstream = fopen("phplog.txt","a+");
 
+$invalid = false;
 
 if (userid_from_username($username)==0) {
-  fwrite($fstream,"invalid token provided (username), please try again\n");
+  $errorstr = "\ninvalid token provided (username), please try again\n";
+  $invalid = true;
   }
 
 if (!checksalt($encryptsalt,$username)) {
-  fwrite($fstream,"invalid token provided (salt used), please try again. salt: $encryptsalt username: $username\n");
+  $errorstr = "\ninvalid token provided (salt used), please try again. salt: $encryptsalt username: $username\n";
+  $invalid = true;
   }
+
+if ($invalid) [
+  fwrite($fstream, $errorstr);
+  die($errorstr);
+} else {
+  fwrite($fstream, "\nusername and salt worked!\n");
+}
 
 fclose($fstream);
 

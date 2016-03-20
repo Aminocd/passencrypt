@@ -272,6 +272,7 @@ $("body").on("change","#radio_single", function() {
 
 $("body").on("click", ".client_row", function() {
   var row_userid = $(this).find("td:eq(0)").html();
+  encryptsalt=$("#encryptsalt").html();
   console.log("row 0 clicked: " + row_userid);
   load_from_id(row_userid);
   });
