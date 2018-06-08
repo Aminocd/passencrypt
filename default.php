@@ -225,7 +225,7 @@ while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
   extract($row);
 
   $clienttablestr .= <<<OED
-<tr><td style="width:20%;max-height:100px;text-align:center">$userid</td><td style="width:20%;max-height:100px">$FullName</td><td style="width:20%;max-height:100px;text-align:center">$age</td><td style="width:20%;max-height:100px;text-align:center">$EducationYears</td><td style="width:20%;max-height:100px;text-align:center">$income</td></tr>
+<tr><td class="client_row" style="width:20%;max-height:100px;text-align:center">$userid</td><td style="width:20%;max-height:100px">$FullName</td><td style="width:20%;max-height:100px;text-align:center">$age</td><td style="width:20%;max-height:100px;text-align:center">$EducationYears</td><td style="width:20%;max-height:100px;text-align:center">$income</td></tr>
 OED;
 
   $client_counter++;
