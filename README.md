@@ -42,7 +42,7 @@ Passencrypt is designed for applications that run on LAMP (Linux, Apache, MySQL,
 
 Follow these steps to install the demo app:
 
-1. Clone the repository: `git clone https://github.com/Amincd/passencrypt.git`
+1. Clone the repository: `git clone https://github.com/Aminocd/passencrypt.git`
 
 2. Create a MySQL database for your app, and make note of the host name, username, database name and password of the new database.
 
